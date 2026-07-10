@@ -3,79 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sync Our Calendar</title>
+    <title>Sync Our Calendars</title>
     <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: #f4f4f9;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-        .card {
-            background: white;
-            padding: 40px 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            text-align: center;
-            max-width: 400px;
-            width: 100%;
-        }
-        h1 {
-            color: #333;
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-        p {
-            color: #666;
-            margin-bottom: 30px;
-            font-size: 16px;
-            line-height: 1.5;
-        }
-        .btn {
-            display: block;
-            width: 100%;
-            padding: 15px;
-            margin-bottom: 15px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-size: 16px;
-            font-weight: bold;
-            color: white;
-            transition: opacity 0.2s;
-            box-sizing: border-box;
-        }
-        .btn:hover {
-            opacity: 0.9;
-        }
-        .btn-apple {
-            background-color: #000000;
-        }
-        .btn-google {
-            background-color: #4285F4;
-        }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background-color: #f4f4f9; display: flex; justify-content: center; min-height: 100vh; margin: 0; padding: 20px; box-sizing: border-box; }
+        .card { background: white; padding: 30px 25px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); text-align: center; max-width: 450px; width: 100%; }
+        h1 { color: #333; font-size: 22px; margin-bottom: 20px; }
+        .calendar-section { background: #fafafa; border: 1px solid #eef; border-radius: 8px; padding: 12px; margin-bottom: 15px; text-align: left; }
+        .calendar-title { font-size: 15px; font-weight: bold; color: #222; margin: 0 0 10px 0; text-align: center; }
+        .btn-group { display: flex; gap: 10px; }
+        .btn { flex: 1; display: block; padding: 10px; border-radius: 6px; text-decoration: none; font-size: 13px; font-weight: bold; color: white; text-align: center; }
+        .btn-apple { background-color: #000000; }
+        .btn-google { background-color: #4285F4; }
     </style>
 </head>
 <body>
 
     <div class="card">
-        <h1>Subscribe to the Calendar</h1>
-        <p>Choose your device below to sync our event schedule directly to your phone. You'll get automatic updates when new events are added.</p>
+        <h1>Sync Our Calendars</h1>
 
-        <a href="webcal://calendar.google.com/calendar/ical/574e32915602c1fb0df454ed20cfd0c52d30bb1c80090ad66cf4ecf3de7bfbe1%40group.calendar.google.com/public/basic.ics" class="btn btn-apple">
-            Sync to Apple / iPhone
-        </a>
+        <!-- Premier League Home -->
+        <div class="calendar-section">
+            <p class="calendar-title">⚽ PL Home</p>
+            <div class="btn-group">
+                <a href="webcal://calendar.google.com/calendar/ical/91735aec13394656ff8c88171670880acc356cd77f6fa4ce427b020169b3d6d7%40group.calendar.google.com/public/basic.ics" class="btn btn-apple">iPhone</a>
+                <a href="https://calendar.google.com/calendar/embed?src=91735aec13394656ff8c88171670880acc356cd77f6fa4ce427b020169b3d6d7%40group.calendar.google.com" class="btn btn-google">Android</a>
+            </div>
+        </div>
 
-<!-- Button for Android / Google Calendar users -->
-        <a href="https://calendar.google.com/calendar/embed?src=574e32915602c1fb0df454ed20cfd0c52d30bb1c80090ad66cf4ecf3de7bfbe1%40group.calendar.google.com" class="btn btn-google">
-            Sync to Google / Android
-        </a>
-        </a>
-        </a>
+        <!-- Champions League Away -->
+        <div class="calendar-section">
+            <p class="calendar-title">🏆 UCL Away</p>
+            <div class="btn-group">
+                <a href="webcal://calendar.google.com/calendar/ical/c1759ef5eb8eeadc87cc1c15c9055c302346db0df1e0bbd5bce2acbd0762289c%40group.calendar.google.com/public/basic.ics" class="btn btn-apple">iPhone</a>
+                <a href="https://calendar.google.com/calendar/embed?src=c1759ef5eb8eeadc87cc1c15c9055c302346db0df1e0bbd5bce2acbd0762289c%40group.calendar.google.com" class="btn btn-google">Android</a>
+            </div>
+        </div>
+
+        <!-- Champions League Home -->
+        <div class="calendar-section">
+            <p class="calendar-title">🏆 UCL Home</p>
+            <div class="btn-group">
+                <a href="webcal://calendar.google.com/calendar/ical/0f057157b5311b675dc7a045628d7bec4be520826ff1b837939585bfa9b4f6ce%40group.calendar.google.com/public/basic.ics" class="btn btn-apple">iPhone</a>
+                <a href="https://calendar.google.com/calendar/embed?src=0f057157b5311b675dc7a045628d7bec4be520826ff1b837939585bfa9b4f6ce%40group.calendar.google.com" class="btn btn-google">Android</a>
+            </div>
+        </div>
+
+        <!-- Domestic Cups Home -->
+        <div class="calendar-section">
+            <p class="calendar-title">🏆 Domestic Home</p>
+            <div class="btn-group">
+                <a href="webcal://calendar.google.com/calendar/ical/39e01746b9e844c67b3e3ba17ad25a35ab0298860627dea56b89a6f5b3569193%40group.calendar.google.com/public/basic.ics" class="btn btn-apple">iPhone</a>
+                <a href="https://calendar.google.com/calendar/embed?src=39e01746b9e844c67b3e3ba17ad25a35ab0298860627dea56b89a6f5b3569193%40group.calendar.google.com" class="btn btn-google">Android</a>
+            </div>
+        </div>
+
+        <!-- Domestic Cups Away -->
+        <div class="calendar-section">
+            <p class="calendar-title">🏆 Domestic Away</p>
+            <div class="btn-group">
+                <a href="webcal://calendar.google.com/calendar/ical/d35a462deccdafd12ff994badea7efa748104d0709ede374efdfe3b80ba3eb32%40group.calendar.google.com/public/basic.ics" class="btn btn-apple">iPhone</a>
+                <a href="https://calendar.google.com/calendar/embed?src=d35a462deccdafd12ff994badea7efa748104d0709ede374efdfe3b80ba3eb32%40group.calendar.google.com" class="btn btn-google">Android</a>
+            </div>
+        </div>
+
     </div>
 
 </body>
