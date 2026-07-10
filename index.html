@@ -18,6 +18,18 @@
             box-sizing: border-box; 
         }
         
+        /* Keyframe Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
         .card { 
             background: #1e1e1e; 
             padding: 35px 25px; 
@@ -26,7 +38,21 @@
             border: 1px solid #2d2d2d;
             max-width: 450px; 
             width: 100%; 
+            /* Card Entrance Animation */
+            animation: fadeInUp 0.6s ease-out;
         }
+
+        /* Staggered item animations */
+        .animate-item {
+            animation: fadeInUp 0.5s ease-out both;
+        }
+        .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.2s; }
+        .delay-3 { animation-delay: 0.3s; }
+        .delay-4 { animation-delay: 0.4s; }
+        .delay-5 { animation-delay: 0.5s; }
+        .delay-6 { animation-delay: 0.6s; }
+        .delay-7 { animation-delay: 0.7s; }
 
         h1 { 
             color: #ffffff; 
@@ -161,14 +187,14 @@
         <p class="intro">Select the schedules you want to sync directly to your device. You'll get automatic updates for date and time changes.</p>
 
         <!-- Instructions Section -->
-        <div class="instructions-box">
+        <div class="instructions-box animate-item delay-1">
             <h3>How to Sync</h3>
             <p><strong>🍎 iPhone / Apple Users:</strong><br>Tap the dark button and select "Subscribe" when the prompt appears.</p>
             <p><strong>🤖 Android / Google Users:</strong><br>Tap the blue button. When the webpage opens, look for the <strong>"+ Google Calendar"</strong> button in the bottom right corner to add it to your account.</p>
         </div>
 
         <!-- Premier League Home -->
-        <div class="calendar-section">
+        <div class="calendar-section animate-item delay-2">
             <p class="calendar-title">PL Home</p>
             <div class="btn-group">
                 <a href="webcal://calendar.google.com/calendar/ical/91735aec13394656ff8c88171670880acc356cd77f6fa4ce427b020169b3d6d7%40group.calendar.google.com/public/basic.ics" class="btn btn-apple">iPhone</a>
@@ -177,7 +203,7 @@
         </div>
 
         <!-- Champions League Home -->
-        <div class="calendar-section">
+        <div class="calendar-section animate-item delay-3">
             <p class="calendar-title">UCL Home</p>
             <div class="btn-group">
                 <a href="webcal://calendar.google.com/calendar/ical/0f057157b5311b675dc7a045628d7bec4be520826ff1b837939585bfa9b4f6ce%40group.calendar.google.com/public/basic.ics" class="btn btn-apple">iPhone</a>
@@ -186,7 +212,7 @@
         </div>
 
         <!-- Champions League Away -->
-        <div class="calendar-section">
+        <div class="calendar-section animate-item delay-4">
             <p class="calendar-title">UCL Away</p>
             <div class="btn-group">
                 <a href="webcal://calendar.google.com/calendar/ical/c1759ef5eb8eeadc87cc1c15c9055c302346db0df1e0bbd5bce2acbd0762289c%40group.calendar.google.com/public/basic.ics" class="btn btn-apple">iPhone</a>
@@ -195,7 +221,7 @@
         </div>
 
         <!-- Domestic Cups Home -->
-        <div class="calendar-section">
+        <div class="calendar-section animate-item delay-5">
             <p class="calendar-title">Domestic Home</p>
             <div class="btn-group">
                 <a href="webcal://calendar.google.com/calendar/ical/39e01746b9e844c67b3e3ba17ad25a35ab0298860627dea56b89a6f5b3569193%40group.calendar.google.com/public/basic.ics" class="btn btn-apple">iPhone</a>
@@ -204,7 +230,7 @@
         </div>
 
         <!-- Domestic Cups Away -->
-        <div class="calendar-section">
+        <div class="calendar-section animate-item delay-6">
             <p class="calendar-title">Domestic Away</p>
             <div class="btn-group">
                 <a href="webcal://calendar.google.com/calendar/ical/d35a462deccdafd12ff994badea7efa748104d0709ede374efdfe3b80ba3eb32%40group.calendar.google.com/public/basic.ics" class="btn btn-apple">iPhone</a>
@@ -213,9 +239,9 @@
         </div>
 
         <!-- Support Section -->
-        <div class="support-section">
+        <div class="support-section animate-item delay-7">
             <a href="https://buymeacoffee.com/lfctools" target="_blank" class="btn btn-support">
-                 Support the Tools
+                ☕ Support the Tools
             </a>
         </div>
 
