@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LFCTools Sales Calendar</title>
+    <title>Sales Calendar</title>
     <style>
         body { 
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
@@ -105,6 +105,16 @@
         .instruction-box.android {
             background-color: #4285F4;
             color: #ffffff;
+        }
+
+        .instruction-box.warning {
+            background-color: #222222;
+            color: #dddddd;
+            border-left: 3px solid #FBE122;
+        }
+        
+        .instruction-box.warning strong {
+            color: #FBE122;
         }
 
         /* 2-Column Grid Layout */
@@ -265,7 +275,7 @@
         <!-- Header -->
         <div class="header-section">
             <div class="header-title-row">
-                <h1>LFCTools Sales Calendar</h1>
+                <h1>Sales Calendar</h1>
                 <div class="info-icon">i</div>
             </div>
             <p class="subtitle">Select your device to sync schedules</p>
@@ -278,6 +288,9 @@
             </div>
             <div class="instruction-box android">
                 <strong>Android:</strong> Requires Gmail. Tap the Android button below, then click <strong>+ Google Calendar</strong> in the bottom right corner of the next screen.
+            </div>
+            <div class="instruction-box warning">
+                <strong>🔔 Notifications:</strong> Calendar apps mute alerts for new subscriptions by default. To get reminded of sales, go into your calendar app's settings and manually add a default alert time to this calendar.
             </div>
         </div>
 
