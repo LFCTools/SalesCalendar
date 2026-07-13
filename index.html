@@ -30,7 +30,7 @@
         /* Top Navigation Bar */
         .top-nav {
             display: flex;
-            justify-content: center; /* Centered the logo now that other icons are gone */
+            justify-content: center; 
             align-items: center;
             padding: 15px 20px;
             background-color: #1a1a1a;
@@ -121,6 +121,20 @@
             border: 1px solid #2a2a2a;
             box-shadow: 0 4px 10px rgba(0,0,0,0.2);
             animation: fadeInUp 0.4s ease-out both;
+        }
+
+        /* Layout Helpers */
+        .centered-top {
+            grid-column: 1 / -1; /* Spans across both columns */
+            justify-self: center; /* Centers horizontally in the grid */
+            width: calc(50% - 7.5px); /* Matches the exact width of the half-size cards below */
+        }
+
+        .full-width {
+            grid-column: 1 / -1;
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 15px 20px;
         }
 
         /* Animation Delays */
@@ -220,14 +234,7 @@
             border: 1px solid #4285F4;
         }
 
-        /* Support Card spanning full width */
-        .full-width {
-            grid-column: 1 / -1;
-            flex-direction: row;
-            justify-content: space-between;
-            padding: 15px 20px;
-        }
-
+        /* Support Button */
         .btn-support {
             background-color: #FBE122;
             color: #111;
@@ -267,8 +274,8 @@
         <!-- 2-Column Grid -->
         <div class="grid-container">
 
-            <!-- Premier League Home -->
-            <div class="card delay-1">
+            <!-- Premier League Home (Centered on top row) -->
+            <div class="card centered-top delay-1">
                 <img src="https://images.fotmob.com/image_resources/logo/leaguelogo/47.png" alt="Premier League" class="comp-logo filter-white">
                 <div class="comp-name">Premier League</div>
                 <div class="comp-type">Home</div>
