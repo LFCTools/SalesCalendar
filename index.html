@@ -1,356 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LFC Fixture Calendars</title>
-    <style>
-        body { 
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
-            background-color: #0a0a0a; 
-            color: #e0e0e0;
-            display: flex; 
-            justify-content: center; 
-            margin: 0; 
-            padding: 0; 
-            box-sizing: border-box; 
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Device Instructions</title>
+<style>
+  /* General Page Styling */
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5; /* Light grey background to make the white box pop */
+    padding: 20px;
+    line-height: 1.6;
+  }
 
-        /* App Container (Mimics Mobile Screen) */
-        .app-container {
-            width: 100%;
-            max-width: 450px;
-            background-color: #121212;
-            min-height: 100vh;
-            box-shadow: 0 0 20px rgba(0,0,0,0.5);
-            display: flex;
-            flex-direction: column;
-        }
+  .instructions-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
 
-        /* Top Navigation Bar */
-        .top-nav {
-            display: flex;
-            justify-content: center; 
-            align-items: center;
-            padding: 15px 20px;
-            background-color: #1a1a1a;
-            border-bottom: 1px solid #2a2a2a;
-        }
+  /* --- iPhone Styling --- */
+  .iphone-box {
+    background-color: #ffffff; /* White box */
+    color: #333333; /* Dark text for readability */
+    flex: 1;
+    min-width: 300px;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    border: 1px solid #e1e4e8;
+  }
 
-        .nav-logo {
-            height: 35px;
-        }
+  .iphone-btn {
+    background-color: #ffffff;
+    color: #333333;
+    border: 1px solid #cccccc;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 15px;
+  }
 
-        /* Header Section */
-        .header-section {
-            padding: 20px 20px 10px 20px;
-        }
+  .iphone-btn:hover {
+    background-color: #f9f9f9;
+  }
 
-        .header-title-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 5px;
-        }
+  /* --- Android Styling --- */
+  .android-box {
+    background-color: #0056b3; /* Blue box */
+    color: #ffffff; /* White text */
+    flex: 1;
+    min-width: 300px;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
 
-        h1 {
-            color: #ffffff;
-            font-size: 20px;
-            font-weight: 400;
-            margin: 0;
-            letter-spacing: 0.5px;
-        }
+  .android-btn {
+    background-color: #0056b3; /* Blue box / background */
+    color: #ffffff; /* White text */
+    border: 2px solid #ffffff; /* White border to help it stand out inside the blue box */
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 15px;
+  }
 
-        .info-icon {
-            color: #888;
-            font-size: 18px;
-            border: 1px solid #888;
-            border-radius: 50%;
-            width: 20px;
-            height: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-style: italic;
-            font-family: serif;
-        }
+  .android-btn:hover {
+    background-color: #004494;
+  }
 
-        .subtitle {
-            color: #999;
-            font-size: 13px;
-            margin: 0;
-        }
-
-        /* Instructions Banner */
-        .instructions-banner {
-            margin: 10px 20px 20px 20px;
-            background-color: rgba(208, 0, 39, 0.08);
-            border-left: 3px solid #d00027;
-            padding: 12px;
-            border-radius: 4px;
-            font-size: 12px;
-            line-height: 1.5;
-            color: #cccccc;
-        }
-
-        .instructions-banner strong {
-            color: #ffffff;
-        }
-
-        .instructions-banner .highlight {
-            color: #FBE122;
-        }
-
-        /* 2-Column Grid Layout */
-        .grid-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            padding: 0 20px 30px 20px;
-        }
-
-        /* Individual Cards */
-        .card {
-            background-color: #1e1e1e;
-            border-radius: 10px;
-            padding: 18px 12px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            border: 1px solid #2a2a2a;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-            animation: fadeInUp 0.4s ease-out both;
-        }
-
-        /* Layout Helpers */
-        .centered-top {
-            grid-column: 1 / -1; /* Spans across both columns */
-            justify-self: center; /* Centers horizontally in the grid */
-            width: calc(50% - 7.5px); /* Matches the exact width of the half-size cards below */
-        }
-
-        .full-width {
-            grid-column: 1 / -1;
-            flex-direction: row;
-            justify-content: space-between;
-            padding: 15px 20px;
-        }
-
-        /* Animation Delays */
-        .delay-1 { animation-delay: 0.05s; }
-        .delay-2 { animation-delay: 0.1s; }
-        .delay-3 { animation-delay: 0.15s; }
-        .delay-4 { animation-delay: 0.2s; }
-        .delay-5 { animation-delay: 0.25s; }
-        .delay-6 { animation-delay: 0.3s; }
-
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(15px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* Logos */
-        .comp-logo {
-            height: 38px;
-            margin-bottom: 12px;
-            object-fit: contain;
-        }
-
-        /* Container for multiple logos side-by-side */
-        .dual-logo-container {
-            display: flex;
-            gap: 10px;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 12px;
-        }
-
-        .dual-logo-container .comp-logo {
-            margin-bottom: 0; /* Removes bottom margin when side-by-side */
-        }
-
-        /* Inverts dark logos to white for dark mode */
-        .filter-white {
-            filter: brightness(0) invert(1);
-        }
-
-        /* Text inside cards */
-        .comp-name {
-            font-size: 13px;
-            color: #ff8a8a; /* Light red mimicking the original burgundy */
-            margin-bottom: 4px;
-            font-weight: 500;
-        }
-
-        .comp-type {
-            font-size: 15px;
-            color: #ffffff;
-            font-weight: 600;
-            margin-bottom: 15px;
-        }
-
-        /* Divider inside card */
-        .card-divider {
-            width: 100%;
-            height: 1px;
-            background-color: #2a2a2a;
-            margin-bottom: 12px;
-        }
-
-        /* Buttons layout inside cards */
-        .btn-group {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            margin-top: auto;
-        }
-
-        .btn {
-            display: block;
-            width: 100%;
-            padding: 8px 0;
-            border-radius: 4px;
-            text-decoration: none;
-            font-size: 12px;
-            font-weight: 600;
-            text-align: center;
-            transition: opacity 0.2s;
-            box-sizing: border-box;
-        }
-
-        .btn:hover { opacity: 0.8; }
-
-        .btn-apple {
-            background-color: #2c2c2e;
-            color: #ffffff;
-            border: 1px solid #ffffff; /* Brighter white outline */
-        }
-
-        .btn-google {
-            background-color: rgba(66, 133, 244, 0.1);
-            color: #4285F4;
-            border: 1px solid #4285F4;
-        }
-
-        /* Support Button */
-        .btn-support {
-            background-color: #FBE122;
-            color: #111;
-            padding: 10px 20px;
-            border-radius: 6px;
-            font-weight: bold;
-            text-decoration: none;
-            font-size: 13px;
-        }
-
-    </style>
+  /* Typography limits for lists */
+  ol {
+    margin-top: 15px;
+    padding-left: 20px;
+  }
+  
+  li {
+    margin-bottom: 10px;
+  }
+</style>
 </head>
 <body>
 
-    <div class="app-container">
-        
-        <!-- Mock App Navigation -->
-        <div class="top-nav">
-            <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8650.png" alt="LFC Crest" class="nav-logo">
-        </div>
+<div class="instructions-wrapper">
+  
+  <!-- iPhone Instructions -->
+  <div class="iphone-box">
+    <h2>iPhone Instructions</h2>
+    <p>Follow these steps to complete the setup on your Apple device:</p>
+    <ol>
+      <li>Open the <strong>Settings</strong> app from your home screen.</li>
+      <li>Scroll down and tap on <strong>General</strong>.</li>
+      <li>Select the configuration option and toggle it to <strong>On</strong>.</li>
+      <li>Click the button below to verify your connection.</li>
+    </ol>
+    <button class="iphone-btn">Verify iPhone Setup</button>
+  </div>
 
-        <!-- Header -->
-        <div class="header-section">
-            <div class="header-title-row">
-                <h1>Fixture Calendars</h1>
-                <div class="info-icon">i</div>
-            </div>
-            <p class="subtitle">Select your device to sync schedules</p>
-        </div>
+  <!-- Android Instructions -->
+  <div class="android-box">
+    <h2>Android Instructions</h2>
+    <p>Follow these steps to complete the setup on your Android device:</p>
+    <ol>
+      <li>Swipe down from the top of your screen to open <strong>Quick Settings</strong>.</li>
+      <li>Tap the <strong>Gear icon</strong> to enter standard settings.</li>
+      <li>Navigate to <strong>Connections</strong> and enable the configuration.</li>
+      <li>Click the button below to verify your connection.</li>
+    </ol>
+    <button class="android-btn">Verify Android Setup</button>
+  </div>
 
-        <!-- Sleek Instructions Banner -->
-        <div class="instructions-banner">
-            <strong style="color: #d00027;">Apple Users:</strong> Tap the dark button and hit "Subscribe".<br><br>
-            <strong style="color: #4285F4;">Android Users:</strong> Requires Gmail. Tap the blue button, then click <strong class="highlight">+ Google Calendar</strong> in the bottom right of the next screen. Check app settings if hidden.
-        </div>
-
-        <!-- 2-Column Grid -->
-        <div class="grid-container">
-
-            <!-- Premier League Home (Centered on top row) -->
-            <div class="card centered-top delay-1">
-                <img src="https://images.fotmob.com/image_resources/logo/leaguelogo/47.png" alt="Premier League" class="comp-logo filter-white">
-                <div class="comp-name">Premier League</div>
-                <div class="comp-type">Home</div>
-                <div class="card-divider"></div>
-                <div class="btn-group">
-                    <a href="webcal://calendar.google.com/calendar/ical/91735aec13394656ff8c88171670880acc356cd77f6fa4ce427b020169b3d6d7%40group.calendar.google.com/public/basic.ics" class="btn btn-apple">iPhone</a>
-                    <a href="https://calendar.google.com/calendar/embed?src=91735aec13394656ff8c88171670880acc356cd77f6fa4ce427b020169b3d6d7%40group.calendar.google.com" class="btn btn-google">Android</a>
-                </div>
-            </div>
-
-            <!-- Champions League Home -->
-            <div class="card delay-2">
-                <img src="https://images.fotmob.com/image_resources/logo/leaguelogo/42.png" alt="UEFA Champions League" class="comp-logo filter-white">
-                <div class="comp-name">European</div>
-                <div class="comp-type">Home</div>
-                <div class="card-divider"></div>
-                <div class="btn-group">
-                    <a href="webcal://calendar.google.com/calendar/ical/0f057157b5311b675dc7a045628d7bec4be520826ff1b837939585bfa9b4f6ce%40group.calendar.google.com/public/basic.ics" class="btn btn-apple">iPhone</a>
-                    <a href="https://calendar.google.com/calendar/embed?src=0f057157b5311b675dc7a045628d7bec4be520826ff1b837939585bfa9b4f6ce%40group.calendar.google.com" class="btn btn-google">Android</a>
-                </div>
-            </div>
-
-            <!-- Champions League Away -->
-            <div class="card delay-3">
-                <img src="https://images.fotmob.com/image_resources/logo/leaguelogo/42.png" alt="UEFA Champions League" class="comp-logo filter-white">
-                <div class="comp-name">European</div>
-                <div class="comp-type">Away</div>
-                <div class="card-divider"></div>
-                <div class="btn-group">
-                    <a href="webcal://calendar.google.com/calendar/ical/c1759ef5eb8eeadc87cc1c15c9055c302346db0df1e0bbd5bce2acbd0762289c%40group.calendar.google.com/public/basic.ics" class="btn btn-apple">iPhone</a>
-                    <a href="https://calendar.google.com/calendar/embed?src=c1759ef5eb8eeadc87cc1c15c9055c302346db0df1e0bbd5bce2acbd0762289c%40group.calendar.google.com" class="btn btn-google">Android</a>
-                </div>
-            </div>
-
-            <!-- Domestic Cups Home -->
-            <div class="card delay-4">
-                <div class="dual-logo-container">
-                    <img src="https://images.fotmob.com/image_resources/logo/leaguelogo/132.png" alt="FA Cup" class="comp-logo">
-                    <img src="https://images.fotmob.com/image_resources/logo/leaguelogo/133.png" alt="League Cup" class="comp-logo">
-                </div>
-                <div class="comp-name">Domestic Cup</div>
-                <div class="comp-type">Home</div>
-                <div class="card-divider"></div>
-                <div class="btn-group">
-                    <a href="webcal://calendar.google.com/calendar/ical/39e01746b9e844c67b3e3ba17ad25a35ab0298860627dea56b89a6f5b3569193%40group.calendar.google.com/public/basic.ics" class="btn btn-apple">iPhone</a>
-                    <a href="https://calendar.google.com/calendar/embed?src=39e01746b9e844c67b3e3ba17ad25a35ab0298860627dea56b89a6f5b3569193%40group.calendar.google.com" class="btn btn-google">Android</a>
-                </div>
-            </div>
-
-            <!-- Domestic Cups Away -->
-            <div class="card delay-5">
-                <div class="dual-logo-container">
-                    <img src="https://images.fotmob.com/image_resources/logo/leaguelogo/132.png" alt="FA Cup" class="comp-logo">
-                    <img src="https://images.fotmob.com/image_resources/logo/leaguelogo/133.png" alt="League Cup" class="comp-logo">
-                </div>
-                <div class="comp-name">Domestic Cup</div>
-                <div class="comp-type">Away</div>
-                <div class="card-divider"></div>
-                <div class="btn-group">
-                    <a href="webcal://calendar.google.com/calendar/ical/d35a462deccdafd12ff994badea7efa748104d0709ede374efdfe3b80ba3eb32%40group.calendar.google.com/public/basic.ics" class="btn btn-apple">iPhone</a>
-                    <a href="https://calendar.google.com/calendar/embed?src=d35a462deccdafd12ff994badea7efa748104d0709ede374efdfe3b80ba3eb32%40group.calendar.google.com" class="btn btn-google">Android</a>
-                </div>
-            </div>
-
-            <!-- Support / Buy Me a Coffee -->
-            <div class="card full-width delay-6">
-                <div style="text-align: left;">
-                    <div style="font-weight: 600; font-size: 14px; color: #fff;">Support the Project</div>
-                    <div style="font-size: 12px; color: #888; margin-top: 3px;">Help keep the tools running</div>
-                </div>
-                <a href="https://buymeacoffee.com/lfctools" target="_blank" class="btn-support">Support the Tools</a>
-            </div>
-
-        </div>
-    </div>
+</div>
 
 </body>
 </html>
