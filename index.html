@@ -143,6 +143,19 @@
             object-fit: contain;
         }
 
+        /* Container for multiple logos side-by-side */
+        .dual-logo-container {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .dual-logo-container .comp-logo {
+            margin-bottom: 0; /* Removes bottom margin when side-by-side */
+        }
+
         /* Inverts dark logos to white for dark mode */
         .filter-white {
             filter: brightness(0) invert(1);
@@ -292,8 +305,11 @@
 
             <!-- Domestic Cups Home -->
             <div class="card delay-4">
-                <img src="https://images.fotmob.com/image_resources/logo/leaguelogo/132.png" alt="FA Cup" class="comp-logo">
-                <div class="comp-name">FA Cup</div>
+                <div class="dual-logo-container">
+                    <img src="https://images.fotmob.com/image_resources/logo/leaguelogo/132.png" alt="FA Cup" class="comp-logo">
+                    <img src="https://images.fotmob.com/image_resources/logo/leaguelogo/133.png" alt="League Cup" class="comp-logo">
+                </div>
+                <div class="comp-name">Domestic Cup</div>
                 <div class="comp-type">Home</div>
                 <div class="card-divider"></div>
                 <div class="btn-group">
@@ -304,8 +320,11 @@
 
             <!-- Domestic Cups Away -->
             <div class="card delay-5">
-                <img src="https://images.fotmob.com/image_resources/logo/leaguelogo/133.png" alt="Carabao Cup" class="comp-logo">
-                <div class="comp-name">League Cup</div>
+                <div class="dual-logo-container">
+                    <img src="https://images.fotmob.com/image_resources/logo/leaguelogo/132.png" alt="FA Cup" class="comp-logo">
+                    <img src="https://images.fotmob.com/image_resources/logo/leaguelogo/133.png" alt="League Cup" class="comp-logo">
+                </div>
+                <div class="comp-name">Domestic Cup</div>
                 <div class="comp-type">Away</div>
                 <div class="card-divider"></div>
                 <div class="btn-group">
